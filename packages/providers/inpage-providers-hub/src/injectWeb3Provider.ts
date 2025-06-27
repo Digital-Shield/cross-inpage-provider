@@ -1,45 +1,45 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
+import { JsBridgeBase } from '@digitalshieldfe/cross-inpage-provider-core';
 import {
   ProviderEthereum,
   shimWeb3,
   registerEIP6963Provider,
   MetaMaskSDK,
   METAMASK_UUID
-} from '@onekeyfe/onekey-eth-provider';
-import { ProviderPrivate } from '@onekeyfe/onekey-private-provider';
-import { ProviderSolana, registerSolanaWallet, WalletIcon } from '@onekeyfe/onekey-solana-provider';
+} from '@digitalshieldfe/digitalshield-eth-provider';
+import { ProviderPrivate } from '@digitalshieldfe/digitalshield-private-provider';
+import { ProviderSolana, registerSolanaWallet, WalletIcon } from '@digitalshieldfe/digitalshield-solana-provider';
 import {
   ProviderAptos,
   ProviderAptosMartian,
   registerAptosWallet,
-} from '@onekeyfe/onekey-aptos-provider';
-import { ProviderConflux } from '@onekeyfe/onekey-conflux-provider';
-import { ProviderAlph, registerAlephiumProvider } from '@onekeyfe/onekey-alph-provider';
-import { ProviderTron } from '@onekeyfe/onekey-tron-provider';
-import { ProviderCardano, defineWindowCardanoProperty } from '@onekeyfe/onekey-cardano-provider';
-import { ProviderCosmos, BBNProviderCosmos } from '@onekeyfe/onekey-cosmos-provider';
-import { ProviderPolkadot, registerPolkadot } from '@onekeyfe/onekey-polkadot-provider';
+} from '@digitalshieldfe/digitalshield-aptos-provider';
+import { ProviderConflux } from '@digitalshieldfe/digitalshield-conflux-provider';
+import { ProviderAlph, registerAlephiumProvider } from '@digitalshieldfe/digitalshield-alph-provider';
+import { ProviderTron } from '@digitalshieldfe/digitalshield-tron-provider';
+import { ProviderCardano, defineWindowCardanoProperty } from '@digitalshieldfe/digitalshield-cardano-provider';
+import { ProviderCosmos, BBNProviderCosmos } from '@digitalshieldfe/digitalshield-cosmos-provider';
+import { ProviderPolkadot, registerPolkadot } from '@digitalshieldfe/digitalshield-polkadot-provider';
 import {
   defineWindowProperty,
   checkWalletSwitchEnable,
-} from '@onekeyfe/cross-inpage-provider-core';
-import { ProviderSui, registerSuiWallet } from '@onekeyfe/onekey-sui-provider';
-import { ProviderBfc, registerBfcWallet } from '@onekeyfe/onekey-bfc-provider';
-import { ProviderWebln } from '@onekeyfe/onekey-webln-provider';
-import { ProviderScdo } from '@onekeyfe/onekey-scdo-provider';
-import { createTonProviderOpenMask, ProviderTon } from '@onekeyfe/onekey-ton-provider';
-import { ProviderNostr } from '@onekeyfe/onekey-nostr-provider';
-import { ProviderBtc, ProviderBtcWallet } from '@onekeyfe/onekey-btc-provider';
-import { ProviderAlgo } from '@onekeyfe/onekey-algo-provider';
-import { ProviderNeo, NEOLineN3, emitNeoReadyEvent } from '@onekeyfe/onekey-neo-provider';
+} from '@digitalshieldfe/cross-inpage-provider-core';
+import { ProviderSui, registerSuiWallet } from '@digitalshieldfe/digitalshield-sui-provider';
+import { ProviderBfc, registerBfcWallet } from '@digitalshieldfe/digitalshield-bfc-provider';
+import { ProviderWebln } from '@digitalshieldfe/digitalshield-webln-provider';
+import { ProviderScdo } from '@digitalshieldfe/digitalshield-scdo-provider';
+import { createTonProviderOpenMask, ProviderTon } from '@digitalshieldfe/digitalshield-ton-provider';
+import { ProviderNostr } from '@digitalshieldfe/digitalshield-nostr-provider';
+import { ProviderBtc, ProviderBtcWallet } from '@digitalshieldfe/digitalshield-btc-provider';
+import { ProviderAlgo } from '@digitalshieldfe/digitalshield-algo-provider';
+import { ProviderNeo, NEOLineN3, emitNeoReadyEvent } from '@digitalshieldfe/digitalshield-neo-provider';
 import { hackAllConnectButtons } from './connectButtonHack';
 import { detectWebsiteRiskLevel, listenPageFocus } from './detectRiskWebsite';
 import { injectFloatingButton } from './floatingButton';
 import { WALLET_CONNECT_INFO } from './connectButtonHack/consts';
 
-export type IWindowOneKeyHub = {
+export type IWindowDigitalShieldHub = {
   debugLogger?: any;
   jsBridge?: JsBridgeBase;
   ethereum?: ProviderEthereum;
@@ -81,11 +81,11 @@ export type IWindowOneKeyHub = {
 function injectWeb3Provider({
   showFloatingButton = false,
 }: { showFloatingButton?: boolean } = {}): unknown {
-  if (!window?.$onekey?.jsBridge) {
-    throw new Error('OneKey jsBridge not found.');
+  if (!window?.$digitalshield?.jsBridge) {
+    throw new Error('DigitalShield jsBridge not found.');
   }
 
-  const bridge: JsBridgeBase = window?.$onekey?.jsBridge;
+  const bridge: JsBridgeBase = window?.$digitalshield?.jsBridge;
 
   const ethereum = new ProviderEthereum({
     bridge,
@@ -135,7 +135,7 @@ function injectWeb3Provider({
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const bbnCosmos = new BBNProviderCosmos(cosmos, {
-    logo: WALLET_CONNECT_INFO.onekey.icon,
+    logo: WALLET_CONNECT_INFO.digitalshield.icon,
   });
 
   const polkadot = new ProviderPolkadot({
@@ -161,8 +161,8 @@ function injectWeb3Provider({
   NEOLineN3.instance = neo;
 
   // providerHub
-  const $onekey = {
-    ...window.$onekey,
+  const $digitalshield = {
+    ...window.$digitalshield,
     jsBridge: bridge,
     $private,
     ethereum,
@@ -188,12 +188,12 @@ function injectWeb3Provider({
     neo: NEOLineN3,
   };
 
-  defineWindowProperty('$onekey', $onekey, { enumerable: true, alwaysInject: true });
+  defineWindowProperty('$digitalshield', $digitalshield, { enumerable: true, alwaysInject: true });
 
   defineWindowProperty('ethereum', ethereum);
-  // OneKey Ethereum EIP6963 Provider
+  // DigitalShield Ethereum EIP6963 Provider
   registerEIP6963Provider({
-    image: WALLET_CONNECT_INFO.onekey.icon,
+    image: WALLET_CONNECT_INFO.digitalshield.icon,
     provider: ethereum,
   });
 
@@ -223,7 +223,7 @@ function injectWeb3Provider({
   defineWindowProperty('tronOfTronLink', tron);
   defineWindowProperty('suiWallet', sui);
   defineWindowProperty('bfcWallet', bfc);
-  defineWindowProperty('onekeyTonWallet', {
+  defineWindowProperty('digitalshieldTonWallet', {
     tonconnect,
   });
   defineWindowProperty('openmask', {
@@ -275,9 +275,9 @@ function injectWeb3Provider({
   // TODO use initializeInpageProvider.ts
   window.dispatchEvent(new Event('ethereum#initialized'));
 
-  // OneKey Solana Standard Wallet
+  // DigitalShield Solana Standard Wallet
   registerSolanaWallet(solana, {
-    icon: WALLET_CONNECT_INFO.onekey.icon as WalletIcon,
+    icon: WALLET_CONNECT_INFO.digitalshield.icon as WalletIcon,
   });
 
   registerSolanaWallet(solana, {
@@ -285,16 +285,16 @@ function injectWeb3Provider({
     name: 'Solflare',
   });
 
-  // OneKey Sui Standard Wallet
+  // DigitalShield Sui Standard Wallet
   registerSuiWallet(sui, {
-    logo: WALLET_CONNECT_INFO.onekey.icon,
+    logo: WALLET_CONNECT_INFO.digitalshield.icon,
   });
 
-  // OneKey Aptos Standard Wallet
+  // DigitalShield Aptos Standard Wallet
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   registerAptosWallet(martian, {
-    name: WALLET_CONNECT_INFO.onekey.text,
-    logo: WALLET_CONNECT_INFO.onekey.icon as WalletIcon,
+    name: WALLET_CONNECT_INFO.digitalshield.text,
+    logo: WALLET_CONNECT_INFO.digitalshield.icon as WalletIcon,
   });
 
   // Override Petra Aptos Standard Wallet
@@ -320,16 +320,16 @@ function injectWeb3Provider({
   if (checkWalletSwitchEnable()) {
     registerSuiWallet(sui, {
       name: 'Sui Wallet',
-      logo: WALLET_CONNECT_INFO.onekey.icon,
+      logo: WALLET_CONNECT_INFO.digitalshield.icon,
     });
   }
 
-  // OneKey BFC Standard Wallet
+  // DigitalShield BFC Standard Wallet
   registerBfcWallet(bfc, {
-    logo: WALLET_CONNECT_INFO.onekey.icon,
+    logo: WALLET_CONNECT_INFO.digitalshield.icon,
   });
 
-  // OneKey Polkadot Standard Wallet
+  // DigitalShield Polkadot Standard Wallet
   registerPolkadot(polkadot);
 
   // Override Polkadot Standard Wallet
@@ -345,6 +345,6 @@ function injectWeb3Provider({
     void listenPageFocus();
   }, 1000);
 
-  return $onekey;
+  return $digitalshield;
 }
 export { injectWeb3Provider };

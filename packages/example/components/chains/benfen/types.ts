@@ -1,5 +1,5 @@
 export interface IProviderApi {
-  isOneKey?: boolean;
+  isDigitalShield?: boolean;
   request<T>({ method, params }: { method: string; params?: any }): Promise<T>;
 }
 

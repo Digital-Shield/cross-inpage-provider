@@ -1,6 +1,6 @@
 # cross-inpage-provider
 
-[OneKey DApp Example](https://dapp-example.onekeytest.com/)
+[DigitalShield DApp Example](https://dapp-example.digitalshieldtest.com/)
 
 # Init monorepo
 

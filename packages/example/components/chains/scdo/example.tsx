@@ -24,9 +24,9 @@ export default function Example() {
       inject: 'scdo',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.scdo',
+      uuid: 'injected-digitalshield',
+      name: 'Injected DigitalShield',
+      inject: '$digitalshield.scdo',
     },
   ]);
 

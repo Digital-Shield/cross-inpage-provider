@@ -3,8 +3,8 @@ import { isPlainObject, isString, isNil } from 'lodash-es';
 import { CrossEventEmitter } from './CrossEventEmitter';
 import { appDebugLogger, consoleErrorInDev } from './loggers';
 
-import type { Web3ProviderError } from '@onekeyfe/cross-inpage-provider-errors';
-import { web3Errors, toNativeErrorObject } from '@onekeyfe/cross-inpage-provider-errors';
+import type { Web3ProviderError } from '@digitalshieldfe/cross-inpage-provider-errors';
+import { web3Errors, toNativeErrorObject } from '@digitalshieldfe/cross-inpage-provider-errors';
 import {
   IDebugLogger,
   IInjectedProviderNamesStrings,
@@ -13,7 +13,7 @@ import {
   IJsBridgeMessagePayload,
   IJsBridgeMessageTypes,
   IJsonRpcResponse,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@digitalshieldfe/cross-inpage-provider-types';
 import versionInfo from './versionInfo';
 
 function toPlainError(errorInfo: IErrorInfo) {
@@ -42,7 +42,7 @@ function isLegacyExtMessage(payload: unknown): boolean {
   const payloadObj = payload as { name: string };
   return (
     Boolean(payloadObj.name) &&
-    ['onekey-provider-eth', 'onekey-provider-cfx', 'publicConfig'].includes(payloadObj.name)
+    ['digitalshield-provider-eth', 'digitalshield-provider-cfx', 'publicConfig'].includes(payloadObj.name)
   );
 }
 
@@ -60,14 +60,14 @@ type IErrorInfo = Error & {
   code?: string | number;
   data?: any;
 
-  // OneKeyError
+  // DigitalShieldError
   key?: string;
   info?: any;
   className?: string;
   autoToast?: boolean;
   requestId?: string;
 
-  // OneKeyHardwareError
+  // DigitalShieldHardwareError
   reconnect?: boolean;
   payload?: {
     code?: number | string;

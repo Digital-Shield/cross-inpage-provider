@@ -125,9 +125,9 @@ export default function BTCExample() {
       inject: 'conflux',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.conflux',
+      uuid: 'injected-digitalshield',
+      name: 'Injected DigitalShield',
+      inject: '$digitalshield.conflux',
     },
   ]);
 

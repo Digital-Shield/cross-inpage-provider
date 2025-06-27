@@ -21,11 +21,11 @@ declare global {
     keplr: any;
     webln: any;
     nostr: any;
-    $onekey: any;
+    $digitalshield: any;
     ReactNativeWebView?: {
       postMessage: (payload: string) => void;
     };
-    ONEKEY_DESKTOP_GLOBALS?: {
+    DIGITALSHIELD_DESKTOP_GLOBALS?: {
       preloadJsUrl: string;
     };
   }

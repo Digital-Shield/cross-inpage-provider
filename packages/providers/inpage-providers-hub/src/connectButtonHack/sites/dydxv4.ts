@@ -1,5 +1,5 @@
 import { createNewImageToContainer, hackConnectButton } from '../hackConnectButton';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@digitalshieldfe/cross-inpage-provider-types';
 import { WALLET_CONNECT_INFO } from '../consts';
 
 export default () => hackConnectButton({
@@ -23,7 +23,7 @@ export default () => hackConnectButton({
         return item.querySelector('div')?.innerText.includes(findName);
       });
 
-      const datasetKey = 'onekey_auto_created_icon_img';
+      const datasetKey = 'digitalshield_auto_created_icon_img';
       if (btn && !btn.querySelector(`[data-${datasetKey}]`)) {
         createNewImageToContainer({
           container: btn as HTMLElement,

@@ -1,4 +1,4 @@
-import { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import { IJsBridgeMessagePayload } from '@digitalshieldfe/cross-inpage-provider-types';
 
 import { JsBridgeBase } from './JsBridgeBase';
 

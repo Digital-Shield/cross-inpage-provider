@@ -1,11 +1,11 @@
 {
-	"name": "@onekeyfe/onekey-cross-webview",
-	"version": "2.2.32",
+	"name": "@digitalshieldfe/digitalshield-cross-webview",
+	"version": "2.0.0",
 	"keywords": [
 		"cross-inpage-provider"
 	],
-	"author": "dev-fe@onekey.so",
-	"repository": "https://github.com/OneKeyHQ/cross-inpage-provider",
+	"author": "dev-fe@digitalshield.so",
+	"repository": "https://github.com/Digital-Shield/cross-inpage-provider",
 	"license": "Apache-2.0",
 	"publishConfig": {
 		"access": "public"
@@ -35,7 +35,7 @@
 		"react-native-webview": "^11.17.2"
 	},
 	"dependencies": {
-		"@onekeyfe/cross-inpage-provider-core": "2.2.32",
-		"@onekeyfe/cross-inpage-provider-types": "2.2.32"
+		"@digitalshieldfe/cross-inpage-provider-core": "2.0.0",
+		"@digitalshieldfe/cross-inpage-provider-types": "2.0.0"
 	}
 }

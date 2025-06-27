@@ -22,7 +22,7 @@ class Notification {
   constructor(settings: NotificationSettings) {
     this.settings = settings;
     this.element = document.createElement("div");
-    this.element.className = `onekey-alert-message ${
+    this.element.className = `digitalshield-alert-message ${
       this.settings.customClass ? this.settings.customClass : ""
     }`;
 
@@ -48,17 +48,17 @@ class Notification {
 
     // content container
     const contentContainer = document.createElement("div");
-    contentContainer.className = "onekey-alert-message-body";
+    contentContainer.className = "digitalshield-alert-message-body";
     contentContainer.innerHTML = this.settings.content;
     this.element?.appendChild(contentContainer);
 
     // dismiss button
     if (this.settings.dismissible) {
       this.dismissButton = document.createElement("div");
-      this.dismissButton.className = "onekey-alert-message-dismiss";
+      this.dismissButton.className = "digitalshield-alert-message-dismiss";
       const dismissIcon = document.createElement("img");
       dismissIcon.setAttribute("src", IconDismiss);
-      dismissIcon.className = "onekey-alert-close-icon";
+      dismissIcon.className = "digitalshield-alert-close-icon";
       this.dismissButton.appendChild(dismissIcon);
       this.element.appendChild(this.dismissButton);
     }
@@ -89,7 +89,7 @@ class Notification {
     if (!this.element) {
       return;
     }
-    this.element.classList.add(".onekey-alert-message-hidden");
+    this.element.classList.add(".digitalshield-alert-message-hidden");
     this.settings.hostElement.removeChild(this.element);
     this.element = null;
     if (this.settings.onDismiss) {
@@ -103,13 +103,13 @@ let container: HTMLDivElement | null = null;
 let style: HTMLStyleElement | null = null;
 
 const styles = `
-    .onekey-alert-container {
+    .digitalshield-alert-container {
       position: fixed;
       z-index: 99999;
       top: 60px;
       right: 42px;
     }
-    .onekey-alert-message {
+    .digitalshield-alert-message {
       min-width: 230px;
       min-height: 44px;
       background: #FFFFFF;
@@ -132,20 +132,20 @@ const styles = `
 
       opacity: 1;
     }
-    .onekey-alert-message + .onekey-alert-message {
+    .digitalshield-alert-message + .digitalshield-alert-message {
       margin-top: 30px;
     }
-    .onekey-alert-message-body {
+    .digitalshield-alert-message-body {
       display: flex;
       align-items: center;
       color: #13141A;
     }
-    .onekey-alert-message-hidden {
+    .digitalshield-alert-message-hidden {
       opacity: 0;
       transition: 0.3s;
     }
 
-    .onekey-alert-message-dismiss {
+    .digitalshield-alert-message-dismiss {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -153,16 +153,16 @@ const styles = `
       height: 32px;
       cursor: pointer;
     }
-    .onekey-alert-close-icon-close {
+    .digitalshield-alert-close-icon-close {
       flex-shrink: 0;
       width: 24px;
       height: 24px;
     }
-    .onekey-strong {
+    .digitalshield-strong {
       font-weight: bold;
       color: #13141A;
     }
-    .onekey-alert-default-wallet {
+    .digitalshield-alert-default-wallet {
       border-radius: 8px;
       height: 71px;
 
@@ -171,7 +171,7 @@ const styles = `
       color: #13141A;
     }
 
-    .onekey-alert-network-changed {
+    .digitalshield-alert-network-changed {
       border-radius: 8px;
       height: 71px;
 
@@ -192,10 +192,10 @@ function notification(options: Partial<NotificationSettings>) {
 
   if (!container) {
     const hostElement = document.createElement('div');
-    hostElement.id = 'onekey-notification-center';
+    hostElement.id = 'digitalshield-notification-center';
     const shadowRoot = hostElement.attachShadow({ mode: 'open' })
     container = document.createElement("div");
-    container.classList.add("onekey-alert-container");
+    container.classList.add("digitalshield-alert-container");
     style = document.createElement("style");
     style.innerHTML = styles;
     shadowRoot.appendChild(style);

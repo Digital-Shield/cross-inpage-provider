@@ -1,10 +1,10 @@
-import { JsBridgeNativeInjected } from '@onekeyfe/native-bridge-injected';
-import { injectWeb3Provider } from '@onekeyfe/inpage-providers-hub';
+import { JsBridgeNativeInjected } from '@digitalshieldfe/native-bridge-injected';
+import { injectWeb3Provider } from '@digitalshieldfe/inpage-providers-hub';
 
 import {
   injectedProviderReceiveHandler,
   injectJsBridge,
-} from '@onekeyfe/cross-inpage-provider-core';
+} from '@digitalshieldfe/cross-inpage-provider-core';
 
 const bridge = () =>
   new JsBridgeNativeInjected({

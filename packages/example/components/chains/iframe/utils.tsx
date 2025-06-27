@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import React from 'react';
-import { JsBridgeIframe } from '@onekeyfe/cross-inpage-provider-core';
-import { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import { JsBridgeIframe } from '@digitalshieldfe/cross-inpage-provider-core';
+import { IJsonRpcRequest } from '@digitalshieldfe/cross-inpage-provider-types';
 
 export async function sendMethod(
   { method, params }: IJsonRpcRequest,

@@ -324,8 +324,8 @@ export default function App() {
   const enable = localStorage.getItem(TON_SCAM_DAPP_ENABLE_KEY);
 
   const manifestUrl = enable
-    ? 'https://dapp-example.onekeytest.com/scam-tonconnect-manifest.json'
-    : 'https://dapp-example.onekeytest.com/tonconnect-manifest.json';
+    ? 'https://dapp-example.digitalshieldtest.com/scam-tonconnect-manifest.json'
+    : 'https://dapp-example.digitalshieldtest.com/tonconnect-manifest.json';
 
   return (
     <>
@@ -334,11 +334,11 @@ export default function App() {
         walletsListConfiguration={{
           includeWallets: [
             {
-              appName: 'onekey',
-              name: 'OneKey',
-              imageUrl: 'https://uni.onekey-asset.com/static/logo/onekey-x288.png',
-              aboutUrl: 'https://onekey.so',
-              jsBridgeKey: 'onekeyTonWallet',
+              appName: 'digitalshield',
+              name: 'DigitalShield',
+              imageUrl: 'https://uni.digitalshield-asset.com/static/logo/digitalshield-x288.png',
+              aboutUrl: 'https://digitalshield.so',
+              jsBridgeKey: 'digitalshieldTonWallet',
               platforms: ['chrome'],
             },
           ],

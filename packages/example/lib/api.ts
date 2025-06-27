@@ -1,4 +1,4 @@
-const DEFAULT_API = 'https://api.onekeytest.com'
+const DEFAULT_API = 'https://api.digitalshieldtest.com'
 
 function getApiKey(apiKey:string, fromBase64 = true) {
     if (fromBase64) {

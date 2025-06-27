@@ -1,7 +1,7 @@
-import type { TronWeb } from '@onekeyfe/onekey-tron-provider';
+import type { TronWeb } from '@digitalshieldfe/digitalshield-tron-provider';
 
 export interface IProviderApi {
-  isOneKey?: boolean;
+  isDigitalShield?: boolean;
   request<T>({ method, params }: { method: string; params?: any }): Promise<T>;
   tronWeb?: TronWeb;
 }
