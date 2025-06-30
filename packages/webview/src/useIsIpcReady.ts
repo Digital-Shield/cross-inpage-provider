@@ -4,7 +4,7 @@ export function useIsIpcReady(): boolean {
   const [isIpcReady, setIsIpcReady] = useState(false);
   const checkReady = useCallback(() => {
     const isBridgeInjected = Boolean(
-      window?.ONEKEY_DESKTOP_GLOBALS?.preloadJsUrl,
+      window?.DIGITALSHIELD_DESKTOP_GLOBALS?.preloadJsUrl,
     );
     if (isBridgeInjected) {
       setIsIpcReady(true);

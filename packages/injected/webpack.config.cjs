@@ -30,7 +30,7 @@ const commonConfig = {
       // '@solana/web3.js': path.resolve(__dirname, 'development/resolveAlias/@solana-web3'),
       tronweb: path.resolve(
         __dirname,
-        'node_modules/@onekeyfe/inpage-providers-hub/node_modules/@onekeyfe/onekey-tron-provider/node_modules/tronweb/dist/TronWeb.js',
+        'node_modules/@digitalshieldfe/inpage-providers-hub/node_modules/@digitalshieldfe/digitalshield-tron-provider/node_modules/tronweb/dist/TronWeb.js',
       ),
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],

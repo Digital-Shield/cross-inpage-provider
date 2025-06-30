@@ -1,4 +1,4 @@
-import type { ProviderAptos } from '@onekeyfe/onekey-aptos-provider';
+import type { ProviderAptos } from '@digitalshieldfe/digitalshield-aptos-provider';
 
 export type IProviderApi = ProviderAptos
 

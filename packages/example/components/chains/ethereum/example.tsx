@@ -48,9 +48,9 @@ export default function Example() {
     },
     {
       info: {
-        uuid: 'injected-onekey',
-        name: 'Injected OneKey (EIP1193)',
-        inject: '$onekey.ethereum',
+        uuid: 'injected-digitalshield',
+        name: 'Injected DigitalShield (EIP1193)',
+        inject: '$digitalshield.ethereum',
       },
     },
   ]);

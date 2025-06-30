@@ -1,12 +1,12 @@
 {
   "private": true,
-  "name": "@onekeyfe/e2e",
+  "name": "@digitalshieldfe/e2e",
   "version": "2.2.23",
   "keywords": [
     "cross-inpage-provider"
   ],
-  "author": "dev-fe@onekey.so",
-  "repository": "https://github.com/OneKeyHQ/cross-inpage-provider",
+  "author": "dev-fe@digitalshield.so",
+  "repository": "https://github.com/Digital-Shield/cross-inpage-provider",
   "license": "Apache-2.0",
   "publishConfig": {
     "access": "public"
@@ -31,9 +31,9 @@
     "test:ui": "yarn env && npx playwright test --ui "
   },
   "dependencies": {
-    "@onekeyfe/cross-inpage-provider-injected": "2.2.23",
-    "@onekeyfe/cross-inpage-provider-types": "2.2.23",
-    "@onekeyfe/inpage-providers-hub": "2.2.23",
+    "@digitalshieldfe/cross-inpage-provider-injected": "2.2.23",
+    "@digitalshieldfe/cross-inpage-provider-types": "2.2.23",
+    "@digitalshieldfe/inpage-providers-hub": "2.2.23",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 import type { WalletApi } from 'lucid-cardano';
 
 export interface IProviderApi {
-  isOneKey?: boolean;
+  isDigitalShield?: boolean;
   apiVersion: string;
   name: string;
   icon: string;

@@ -11,11 +11,11 @@ export const switchDefaultWalletNotification = (isDefaultWallet: boolean) => {
     instance.dismiss();
     instance = null;
   }
-  const text = isDefaultWallet ? 'OneKey is your default wallet now.' : 'OneKey Default Canceled';
+  const text = isDefaultWallet ? 'DigitalShield is your default wallet now.' : 'DigitalShield Default Canceled';
   instance = notification({
     dismissible: true,
     duration: 0,
-    customClass: "onekey-alert-default-wallet",
+    customClass: "digitalshield-alert-default-wallet",
     content: `<div style="display: flex; align-items: center; gap: 8px;">
       <img style="width: 32px;" src="${IconLogo}"/>
       <div>

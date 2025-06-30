@@ -57,9 +57,9 @@ export default function Example() {
       inject: 'keplr',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.cosmos',
+      uuid: 'injected-digitalshield',
+      name: 'Injected DigitalShield',
+      inject: '$digitalshield.cosmos',
     },
   ]);
 

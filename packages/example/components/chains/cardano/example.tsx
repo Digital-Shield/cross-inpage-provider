@@ -45,9 +45,9 @@ export default function Example() {
       inject: 'cardano',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.cardano',
+      uuid: 'injected-digitalshield',
+      name: 'Injected DigitalShield',
+      inject: '$digitalshield.cardano',
     },
   ]);
 
@@ -185,7 +185,7 @@ export default function Example() {
         fetchWallets={() => {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           const wallets = Object.keys(window?.cardano ?? {})
-            .filter((name) => ['onekey', 'lace', 'nami', 'yoroi'].includes(name))
+            .filter((name) => ['digitalshield', 'lace', 'nami', 'yoroi'].includes(name))
             .map((key) => {
               return {
                 uuid: key,

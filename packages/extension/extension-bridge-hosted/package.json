@@ -1,11 +1,11 @@
 {
-  "name": "@onekeyfe/extension-bridge-hosted",
+  "name": "@digitalshieldfe/extension-bridge-hosted",
   "version": "2.2.23",
   "keywords": [
     "cross-inpage-provider"
   ],
-  "author": "dev-fe@onekey.so",
-  "repository": "https://github.com/OneKeyHQ/cross-inpage-provider",
+  "author": "dev-fe@digitalshield.so",
+  "repository": "https://github.com/Digital-Shield/cross-inpage-provider",
   "license": "Apache-2.0",
   "publishConfig": {
     "access": "public"
@@ -28,8 +28,8 @@
     "start": "tsc --watch"
   },
   "dependencies": {
-    "@onekeyfe/cross-inpage-provider-core": "2.2.23",
-    "@onekeyfe/cross-inpage-provider-types": "2.2.23",
+    "@digitalshieldfe/cross-inpage-provider-core": "2.2.23",
+    "@digitalshieldfe/cross-inpage-provider-types": "2.2.23",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

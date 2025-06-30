@@ -1,4 +1,4 @@
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@digitalshieldfe/cross-inpage-provider-types';
 import { WALLET_CONNECT_INFO, WALLET_NAMES } from '../consts';
 import { findIconAndNameByName, findIconAndNameByIcon } from './findIconAndName';
 import { isWalletIconLessEqualThan, replaceIcon } from './imgUtils';
@@ -174,15 +174,15 @@ export type SitesInfo = {
   only?: boolean;
   skip?: boolean | { mobile?: boolean; desktop?: boolean };
 };
-const onekeySelectorInRowbowkit = 'button[data-testid="rk-wallet-option-so.onekey.app.wallet"]';
-function hasOnekeyWallet(ele: HTMLElement | Document = document) {
-  return !!ele.querySelector(onekeySelectorInRowbowkit);
+const digitalshieldSelectorInRowbowkit = 'button[data-testid="rk-wallet-option-so.digitalshield.app.wallet"]';
+function hasDigitalshieldWallet(ele: HTMLElement | Document = document) {
+  return !!ele.querySelector(digitalshieldSelectorInRowbowkit);
 }
 const metamaskForRainbowKit: WalletInfo = {
   ...basicWalletInfo['metamask'],
-  skip: async (page: Page) => (await page.locator(onekeySelectorInRowbowkit).count()) > 0,
+  skip: async (page: Page) => (await page.locator(digitalshieldSelectorInRowbowkit).count()) > 0,
   container: () => {
-    if (hasOnekeyWallet()) {
+    if (hasDigitalshieldWallet()) {
       return null;
     }
     return document.querySelector('button[data-testid="rk-wallet-option-metaMask"]');
@@ -196,9 +196,9 @@ const metamaskForRainbowKit: WalletInfo = {
 
 const walletConnectForRainbowKit: WalletInfo = {
   ...basicWalletInfo[WALLET_NAMES.walletconnect],
-  skip: async (page: Page) => (await page.locator(onekeySelectorInRowbowkit).count()) > 0,
+  skip: async (page: Page) => (await page.locator(digitalshieldSelectorInRowbowkit).count()) > 0,
   container: () => {
-    if (hasOnekeyWallet()) {
+    if (hasDigitalshieldWallet()) {
       return null;
     }
     return document.querySelector('button[data-testid="rk-wallet-option-walletConnect"]');
@@ -4304,13 +4304,13 @@ export const sitesConfig: SitesInfo[] = [
           afterUpdate(textNode) {
             const ledgerInput = document.getElementById('connect-ledger-wallet-with-phantom');
             if (textNode) {
-              textNode.textContent = 'OneKey Hardware & Phantom';
+              textNode.textContent = 'DigitalShield Hardware & Phantom';
             }
             const label = ledgerInput?.parentElement as HTMLLabelElement;
             if (label) {
               const span = label.querySelector('span');
               if (span) {
-                span.textContent = 'I am using my ledger/onekey hardware with one of these wallets';
+                span.textContent = 'I am using my ledger/digitalshield hardware with one of these wallets';
               }
               label.style.padding = '20px';
               label.style.display = 'flex';
@@ -4485,7 +4485,7 @@ export const sitesConfig: SitesInfo[] = [
           },
           afterUpdate(textNode, iconNode) {
             if (textNode) {
-              textNode.textContent = 'OneKey&UniSat';
+              textNode.textContent = 'DigitalShield&UniSat';
             }
             if (iconNode) {
               iconNode.style.width = '28px';
@@ -5030,7 +5030,7 @@ export const sitesConfig: SitesInfo[] = [
           },
           afterUpdate(textNode) {
             if (textNode) {
-              textNode.textContent = 'Onekey&Phantom';
+              textNode.textContent = 'Digitalshield&Phantom';
             }
           }
         },

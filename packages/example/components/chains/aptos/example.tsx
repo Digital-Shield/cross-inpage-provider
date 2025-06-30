@@ -25,9 +25,9 @@ export default function Example() {
       inject: 'aptos',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.aptos',
+      uuid: 'injected-digitalshield',
+      name: 'Injected DigitalShield',
+      inject: '$digitalshield.aptos',
     },
   ]);
 

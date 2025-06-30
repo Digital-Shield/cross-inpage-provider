@@ -106,9 +106,9 @@ export default function Example() {
       inject: 'tronLink',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.tron',
+      uuid: 'injected-digitalshield',
+      name: 'Injected DigitalShield',
+      inject: '$digitalshield.tron',
     },
   ]);
 

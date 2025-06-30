@@ -3,14 +3,14 @@ import {
   isLegacyExtMessage,
   appDebugLogger,
   injectedFactory,
-} from '@onekeyfe/cross-inpage-provider-core';
+} from '@digitalshieldfe/cross-inpage-provider-core';
 import {
   IPostMessageEventData,
   IOptionsWithDebugLogger,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@digitalshieldfe/cross-inpage-provider-types';
 
 import messagePort from '../extensionMessagePort';
-import { commonLogger } from '@onekeyfe/cross-inpage-provider-core';
+import { commonLogger } from '@digitalshieldfe/cross-inpage-provider-core';
 
 const { EXT_PORT_CS_TO_BG, JS_BRIDGE_MESSAGE_DIRECTION, JS_BRIDGE_MESSAGE_EXT_CHANNEL } = consts;
 
@@ -80,9 +80,9 @@ function setupMessagePort(options: IOptionsWithDebugLogger = {}) {
       window.addEventListener('message', onWindowPostMessage, false);
       return () => {
         commonLogger.error(
-          'ONEKEY: lost connection to hosted bridge. You should reload page to establish a new connection.',
+          'DIGITALSHIELD: lost connection to hosted bridge. You should reload page to establish a new connection.',
         );
-        window.dispatchEvent(new Event('onekey_bridge_disconnect'));
+        window.dispatchEvent(new Event('digitalshield_bridge_disconnect'));
         window.removeEventListener('message', onWindowPostMessage, false);
       };
     },

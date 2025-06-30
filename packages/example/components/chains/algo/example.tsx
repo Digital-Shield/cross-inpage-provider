@@ -17,9 +17,9 @@ export default function Example() {
       inject: 'algorand',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.algorand',
+      uuid: 'injected-digitalshield',
+      name: 'Injected DigitalShield',
+      inject: '$digitalshield.algorand',
     },
   ]);
 

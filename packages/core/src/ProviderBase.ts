@@ -8,7 +8,7 @@ import {
   IJsonRpcResponse,
   ConsoleLike,
   IDebugLogger,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@digitalshieldfe/cross-inpage-provider-types';
 import siteMetadata from './siteMetadata';
 import { fakeLogger, fakeDebugLogger, consoleErrorInDev } from './loggers';
 import versionInfo from './versionInfo';
@@ -80,9 +80,9 @@ abstract class ProviderBase extends CrossEventEmitter {
       }
 
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      window.$onekey = window.$onekey || {};
+      window.$digitalshield = window.$digitalshield || {};
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      window.$onekey.$debugLogger = debugLogger;
+      window.$digitalshield.$debugLogger = debugLogger;
     } catch (error) {
       consoleErrorInDev('configDebugLogger ERROR:', error);
     }
@@ -108,9 +108,9 @@ abstract class ProviderBase extends CrossEventEmitter {
         }
         if (result && result.walletInfo) {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          window.$onekey = window.$onekey || {};
+          window.$digitalshield = window.$digitalshield || {};
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          window.$onekey.$walletInfo = result.walletInfo;
+          window.$digitalshield.$walletInfo = result.walletInfo;
           try {
             localStorage.setItem(WALLET_INFO_LOACAL_KEY_V5, JSON.stringify(result.walletInfo));
           } catch (e) {
@@ -135,7 +135,7 @@ abstract class ProviderBase extends CrossEventEmitter {
 
   public version: string = versionInfo.version;
 
-  public isOneKey = true;
+  public isDigitalShield = true;
 
   protected abstract providerName: IInjectedProviderNamesStrings;
 
